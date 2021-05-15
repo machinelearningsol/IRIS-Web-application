@@ -1,0 +1,52 @@
+h1 {
+  padding:20px;
+  text-align: center;
+}
+
+.container-fluid {
+  padding: 0.5% 10%;
+}
+
+.navbar {
+  margin: 0 auto 0 auto;
+}
+
+.navbar-brand {
+    font-size:2.5rem;
+}
+
+.nav {
+  font-size:1.1rem;
+}
+
+.img-responsive {
+  display: block;
+  width:90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.irisform {
+    margin: 1% 13%;
+}
+
+h3 {
+    padding:6%;
+}
+
+.abouth3 {
+    padding:0%;
+}
+
+.about {
+    margin: 1% 13%;
+}
+
+.loaddata {
+    margin: 0 20%;
+    padding: 1% 13%;
+    text-align:center;
+}
+.iriscont {
+    padding:1% 15% 1% 15%;
+}
