@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+    {% block content %}
+        <div class="loaddata">
+            <form action="show_data" method="POST">
+            {% csrf_token %}
+                <button type="submit" class="btn btn-primary btn-lg">Click to Load IRIS Data</button>
+             </form>
+        </div>
+
+         <div class="container iriscont">
+            <table class="iristable table table-condensed">
+              <thead>
+                <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">sepal_length</th>
+                    <th scope="col">sepal_width</th>
+                    <th scope="col">petal_length</th>
+                    <th scope="col">petal_width</th>
+                    <th scope="col">iris_class</th>
+                </tr>
+              </thead>
+                {% for row in iris_db %}
+                  <tbody>
+                    <tr>
+                        <th scope="row">{{row.id}}</th>
+                        <td>{{row.sepal_length}}</td>
+                        <td>{{row.sepal_width}}</td>
+                        <td>{{row.petal_length}}</td>
+                        <td>{{row.petal_width}}</td>
+                        <td>{{row.iris_class}}</td>
+                    </tr>
+                  </tbody>
+                {% endfor %}
+            </table>
+        </div>
+
+    {% endblock %}

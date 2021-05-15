@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+    <h4 class="index-h4">
+        {% for message in messages%}
+        {{ message }}
+        {% endfor %}
+    </h4>
+
+    <div class="span3 irisform">
+        <form action="get_prediction" method="POST" id="iris_form" onsubmit="required()" name="form1" >
+            {% csrf_token %}
+            <label>Select Machine Learning Model</label>
+            <select name="models">
+                <option value="dct">Decision Tree</option>
+                <option value="svm">Support Vector Machine</option>
+                <option value="nb">Naive Bayes</option>
+                <option value="knn">K-Nearest Neighbors</option>
+            </select>
+            <br>
+            <label>Sepal Length (in cms)</label>
+            <input type="number" name="sepal_length" class="span3" step="0.1" min="0" max="9">
+            <label>Sepal Width  (in cms)</label>
+            <input type="number" name="sepal_width" class="span3" step="0.1" min="0" max="9">
+            <label>Petal Length (in cms)</label>
+            <input type="number" name="petal_length" class="span3" step="0.1" min="0" max="9">
+            <label>Petal Width  (in cms)</label>
+            <input type="number" name="petal_width" class="span3" step="0.1" min="0" max="9">
+            <input type="submit" value="Run Prediction" class="btn btn-primary pull-right" onclick="submit()" >
+        </form>
+    </div>
+
+    <div>
+        <h3 id="prediction"> Prediction Result: {{prediction}} </h3>
+    </div>
+
+    {% endblock %}

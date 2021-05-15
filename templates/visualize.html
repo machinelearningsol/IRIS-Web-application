@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+    {% block content %}
+
+     <div class="container item_grid">
+         <h3 class="vish4"> Explanatory Data Analysis </h3>
+         {% for image in db_visuals %}
+         <img class="irisimg" src="{{image.img.url}}" alt="">
+         {% endfor %}
+     </div>
+    {% endblock %}
